@@ -14,17 +14,21 @@ public abstract class ColorTable {
 	protected double fMin;
 	protected double fMax;
 	protected Color table[];
-		
+	protected double range;
+	protected double step;
+
 	public ColorTable(int size, double fMin, double fMax) {
 		this.size = size;
 		this.fMin = fMin;
 		this.fMax = fMax;
-		this.table = new Color[size];		
+		this.table = new Color[size];
+		this.range = fMax-fMin;
+		this.step = range/size;
 	}
-	
-	public Color getColor(double f) {
-		// To do: return appropriate color table entry
-		return table[0];
+
+	public Color getColor(double f){
+		int value = (int) ((f-fMin) /step);
+		return table[value];
 	}
 	
 	public String toString() {

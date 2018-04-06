@@ -36,12 +36,12 @@ public class ColorMapper extends JFrame {
 		ColorMapper mathFunc;
 		try {
 			// mathematical function
-			mathFunc = new ColorMapper("Math Function", 800, 800,
+			/*mathFunc = new ColorMapper("Math Function", 800, 800,
 					DatasetType.MATH_FUNC, ColorTableType.DUMMY, 20);
 			mathFunc.setVisible(true);
-			// Hawaii elevation data
+			*/// Hawaii elevation data
 			mathFunc = new ColorMapper("Hawaii", 800, 800,
-					DatasetType.HAWAII, ColorTableType.GRAYSCALE, 50);
+					DatasetType.HAWAII, ColorTableType.BLUE, 50);
 			mathFunc.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,14 +73,14 @@ public class ColorMapper extends JFrame {
 			colorTable = new GrayscaleTable(ctSize, dataset.getFMin(), dataset.getFMax());
 			break;
 
-			/*
+
 		case RAINBOW:
 			colorTable = new RainbowTable(ctSize, dataset.getFMin(), dataset.getFMax());
 			break;
-		case BLUE:
+		 case BLUE:
 			colorTable = new BlueTable(ctSize, dataset.getFMin(), dataset.getFMax());
 			break;
-		 */			
+
 		default:
 			throw new Exception("Unknown ColorTableType in ColorMapper().");				
 		}
